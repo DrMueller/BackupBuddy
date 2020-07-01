@@ -1,8 +1,0 @@
-C:\MyGit\Personal\BackupBuddy\Sources\Application\bin\Debug\netcoreapp3.1\Mmu.BackupBuddy.Application.deps.json
-C:\MyGit\Personal\BackupBuddy\Sources\Application\bin\Debug\netcoreapp3.1\Mmu.BackupBuddy.Application.dll
-C:\MyGit\Personal\BackupBuddy\Sources\Application\bin\Debug\netcoreapp3.1\Mmu.BackupBuddy.Application.pdb
-C:\MyGit\Personal\BackupBuddy\Sources\Application\obj\Debug\netcoreapp3.1\Mmu.BackupBuddy.Application.AssemblyInfoInputs.cache
-C:\MyGit\Personal\BackupBuddy\Sources\Application\obj\Debug\netcoreapp3.1\Mmu.BackupBuddy.Application.AssemblyInfo.cs
-C:\MyGit\Personal\BackupBuddy\Sources\Application\obj\Debug\netcoreapp3.1\Mmu.BackupBuddy.Application.dll
-C:\MyGit\Personal\BackupBuddy\Sources\Application\obj\Debug\netcoreapp3.1\Mmu.BackupBuddy.Application.pdb
-C:\MyGit\Personal\BackupBuddy\Sources\Application\obj\Debug\netcoreapp3.1\Mmu.BackupBuddy.Application.csproj.CoreCompileInputs.cache
