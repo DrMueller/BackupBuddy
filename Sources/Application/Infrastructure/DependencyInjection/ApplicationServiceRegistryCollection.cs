@@ -1,4 +1,6 @@
 ﻿using Lamar;
+using Mmu.BackupBuddy.Application.Infrastructure.Settings.Services;
+using Mmu.BackupBuddy.Application.Infrastructure.Settings.Services.Implementation;
 
 namespace Mmu.BackupBuddy.Application.Infrastructure.DependencyInjection
 {
@@ -11,6 +13,8 @@ namespace Mmu.BackupBuddy.Application.Infrastructure.DependencyInjection
                 scanner.AssemblyContainingType<ApplicationServiceRegistryCollection>();
                 scanner.WithDefaultConventions();
             });
+
+            For<IAppSettingsProvider>().Use<AppSettingsProvider>().Singleton();
         }
     }
 }

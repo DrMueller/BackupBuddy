@@ -2,7 +2,7 @@
 {
     public class BackupSettingDto
     {
-        public string DirectoryToBackup { get; set; }
+        public string RelativeDropboxPathToBackup { get; set; }
         public string TargetSubDirectory { get; set; }
     }
 }

@@ -36,3 +36,13 @@ C:\MyGit\Personal\BackupBuddy\Sources\TestConsole\bin\Debug\netcoreapp3.1\System
 C:\MyGit\Personal\BackupBuddy\Sources\TestConsole\bin\Debug\netcoreapp3.1\Mmu.BackupBuddy.Application.dll
 C:\MyGit\Personal\BackupBuddy\Sources\TestConsole\bin\Debug\netcoreapp3.1\Mmu.BackupBuddy.Application.pdb
 C:\MyGit\Personal\BackupBuddy\Sources\TestConsole\obj\Debug\netcoreapp3.1\Mmu.BackupBuddy.TestConsole.csproj.CopyComplete
+C:\MyGit\Personal\BackupBuddy\Sources\TestConsole\obj\Debug\netcoreapp3.1\Mmu.BackupBuddy.TestConsole.csproj.CoreCompileInputs.cache
+C:\MyGit\Personal\BackupBuddy\Sources\TestConsole\obj\Debug\netcoreapp3.1\Mmu.BackupBuddy.TestConsole.genruntimeconfig.cache
+C:\MyGit\Personal\BackupBuddy\Sources\TestConsole\bin\Debug\netcoreapp3.1\MailKit.dll
+C:\MyGit\Personal\BackupBuddy\Sources\TestConsole\bin\Debug\netcoreapp3.1\MimeKit.dll
+C:\MyGit\Personal\BackupBuddy\Sources\TestConsole\bin\Debug\netcoreapp3.1\Mmu.Mlh.Adapters.dll
+C:\MyGit\Personal\BackupBuddy\Sources\TestConsole\bin\Debug\netcoreapp3.1\Mmu.Mlh.ApplicationExtensions.dll
+C:\MyGit\Personal\BackupBuddy\Sources\TestConsole\bin\Debug\netcoreapp3.1\Mmu.Mlh.DomainExtensions.dll
+C:\MyGit\Personal\BackupBuddy\Sources\TestConsole\bin\Debug\netcoreapp3.1\NLog.dll
+C:\MyGit\Personal\BackupBuddy\Sources\TestConsole\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
+C:\MyGit\Personal\BackupBuddy\Sources\TestConsole\bin\Debug\netcoreapp3.1\StructureMap.dll

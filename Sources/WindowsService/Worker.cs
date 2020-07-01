@@ -26,6 +26,8 @@ namespace Mmu.BackupBuddy.WindowsService
             _stoppingToken = stoppingToken;
             _timer = new Timer(1000 * 60 * 60 * 12);
             _timer.Elapsed += Timer_Elapsed;
+
+            _logger.LogInformation("Starting backup...");
             _backupOrchestrator.CreateBackups();
 
             return Task.CompletedTask;

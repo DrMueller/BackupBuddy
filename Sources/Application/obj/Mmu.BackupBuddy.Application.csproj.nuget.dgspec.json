@@ -10,14 +10,14 @@
         "projectUniqueName": "C:\\MyGit\\Personal\\BackupBuddy\\Sources\\Application\\Mmu.BackupBuddy.Application.csproj",
         "projectName": "Mmu.BackupBuddy.Application",
         "projectPath": "C:\\MyGit\\Personal\\BackupBuddy\\Sources\\Application\\Mmu.BackupBuddy.Application.csproj",
-        "packagesPath": "C:\\Users\\Matthias\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\mlm\\.nuget\\packages\\",
         "outputPath": "C:\\MyGit\\Personal\\BackupBuddy\\Sources\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Matthias\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\mlm\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -25,6 +25,8 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\github.xmedia.ch\\Immoscout24\\BE-2-Framework\\Build\\nupkgs": {},
+          "http://nuget.immoscout24.ch/nuget": {},
           "https://api.nuget.org/v3/index.json": {},
           "https://drmueller.pkgs.visualstudio.com/_packaging/DrMuellersFeed/nuget/v3/index.json": {}
         },
@@ -42,6 +44,10 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "Mmu.Mlh.ApplicationExtensions": {
+              "target": "Package",
+              "version": "[2.3.2, )"
+            },
             "Mmu.Mlh.ServiceProvisioning": {
               "target": "Package",
               "version": "[2.1.5, )"
@@ -74,7 +80,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
         }
       }
     }
