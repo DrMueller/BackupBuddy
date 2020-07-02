@@ -1,7 +1,9 @@
-﻿namespace Mmu.BackupBuddy.Application.Areas.Orchestration.Services
+﻿using Microsoft.Extensions.Logging;
+
+namespace Mmu.BackupBuddy.Application.Areas.Orchestration.Services
 {
     public interface IBackupOrchestrationService
     {
-        void CreateBackups();
+        void CreateBackups(ILogger logger);
     }
 }

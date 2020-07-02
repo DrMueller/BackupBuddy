@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO.Abstractions;
 using System.Linq;
+using MimeKit.Cryptography;
 using Mmu.BackupBuddy.Application.Infrastructure.Settings.Dtos;
 using Mmu.BackupBuddy.Application.Infrastructure.Settings.Models;
 using Mmu.Mlh.ApplicationExtensions.Areas.Dropbox.Services;
@@ -39,10 +40,10 @@ namespace Mmu.BackupBuddy.Application.Infrastructure.Settings.Services.Implement
                 string.Empty,
                 string.Empty,
                 @"Apps\BackupBuddy\");
-
+            
             var dropboxPath = _dropboxLocator
                 .LocateDropboxPath()
-                .Reduce(() => throw new NotSupportedException("Couldn't find Dropbox"));
+                .Reduce(() => Environment.GetEnvironmentVariable("DropboxPath", EnvironmentVariableTarget.Machine));
 
             var settingsDto = _settingsFactory.CreateSettings<AppSettingsDto>(settingsConfig);
             var backupSettings = settingsDto.BackupSettings.Select(dto => CreateBackupSetting(dropboxPath, dto)).ToList();

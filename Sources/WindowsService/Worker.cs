@@ -1,3 +1,5 @@
+using System;
+using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Timers;
@@ -24,12 +26,10 @@ namespace Mmu.BackupBuddy.WindowsService
         protected override Task ExecuteAsync(CancellationToken stoppingToken)
         {
             _stoppingToken = stoppingToken;
-            _timer = new Timer(1000 * 60 * 60 * 12);
+            _timer = new Timer(1000 * 60 * 60 * 4);
             _timer.Elapsed += Timer_Elapsed;
 
-            _logger.LogInformation("Starting backup...");
-            _backupOrchestrator.CreateBackups();
-
+            CreateBackups();
             return Task.CompletedTask;
         }
 
@@ -42,8 +42,21 @@ namespace Mmu.BackupBuddy.WindowsService
                 return;
             }
 
-            _logger.LogInformation("Starting backup...");
-            _backupOrchestrator.CreateBackups();
+            CreateBackups();
+        }
+
+        private void CreateBackups()
+        {
+            try
+            {
+                _logger.LogInformation("Starting backup...");
+                _backupOrchestrator.CreateBackups(_logger);
+                _logger.LogInformation("Backup finished");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogCritical(ex, ex.Message);
+            }
         }
     }
 }

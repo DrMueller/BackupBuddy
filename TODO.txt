@@ -1,8 +1,0 @@
-# Workflow
-
-- Read paths to backup
-- For each path
-- Zip path into zip
-  - Name is Date
-- Save it to path
-- If more than 5 entries are saved, delete some
