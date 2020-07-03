@@ -1,15 +1,14 @@
-﻿using Microsoft.Extensions.Logging;
-using Mmu.BackupBuddy.Application.Areas.SubAreas.BackupCleaning.Services;
+﻿using Mmu.BackupBuddy.Application.Areas.SubAreas.BackupCleaning.Services;
 using Mmu.BackupBuddy.Application.Areas.SubAreas.FileSaving.Services;
+using Mmu.BackupBuddy.Application.Areas.SubAreas.TempPath.Services;
 using Mmu.BackupBuddy.Application.Areas.SubAreas.Zipping.Services;
-using Mmu.BackupBuddy.Application.Infrastructure.Settings.Services;
 
 namespace Mmu.BackupBuddy.Application.Areas.Orchestration.Services.Implementation
 {
     public class BackupOrchestrationService : IBackupOrchestrationService
     {
-        private readonly IAppSettingsProvider _appSetingsProvider;
         private readonly IBackupCleaner _backupCleaner;
+        private readonly ITempPathRepository _tempPathRepository;
         private readonly IZipFileFactory _zipFileFactory;
         private readonly IZipFileSaver _zipFileSaver;
 
@@ -17,24 +16,27 @@ namespace Mmu.BackupBuddy.Application.Areas.Orchestration.Services.Implementatio
             IZipFileFactory zipFileFactory,
             IZipFileSaver zipFileSaver,
             IBackupCleaner backupCleaner,
-            IAppSettingsProvider appSetingsProvider)
+            ITempPathRepository tempPathRepository)
         {
             _zipFileFactory = zipFileFactory;
             _zipFileSaver = zipFileSaver;
             _backupCleaner = backupCleaner;
-            _appSetingsProvider = appSetingsProvider;
+            _tempPathRepository = tempPathRepository;
         }
 
-        public void CreateBackups(ILogger logger)
+        public void CreateBackups()
         {
-            var settings = _appSetingsProvider.ProvideAppSettings();
-
-            logger.LogInformation($"TargetBaseDirectory: {settings.TargetBaseDirectory}");
-            logger.LogInformation($"Cnt: {settings.BackupSettings.Count}");
-
-            var zipFiles = _zipFileFactory.CreateZipFiles();
-            _zipFileSaver.SaveZipFiles(zipFiles);
-            _backupCleaner.CleanOldBackups();
+            try
+            {
+                _tempPathRepository.InitializeTempPath();
+                var zipFiles = _zipFileFactory.CreateZipFiles();
+                _zipFileSaver.SaveZipFiles(zipFiles);
+                _backupCleaner.CleanOldBackups();
+            }
+            finally
+            {
+                _tempPathRepository.ClearTempPath();
+            }
         }
     }
 }

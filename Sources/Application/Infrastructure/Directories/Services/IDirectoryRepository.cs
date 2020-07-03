@@ -3,6 +3,5 @@
     public interface IDirectoryRepository
     {
         void AssureDirectoryExists(string directory);
-        void CleanDirectoryRecursive(string directory);
     }
 }

@@ -5,7 +5,7 @@ using Mmu.Mlh.LanguageExtensions.Areas.Collections;
 
 namespace Mmu.BackupBuddy.Application.Areas.SubAreas.BackupCleaning.Services.Implementation
 {
-    public class BackupCleaner : IBackupCleaner
+    internal class BackupCleaner : IBackupCleaner
     {
         private readonly IAppSettingsProvider _appSettingsProvider;
         private readonly IFileSystem _fileSystem;

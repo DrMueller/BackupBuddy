@@ -1,20 +1,19 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Microsoft.Extensions.Logging;
+using JetBrains.Annotations;
 using Mmu.BackupBuddy.Application.Areas.Orchestration.Services;
 using Mmu.Mlh.ConsoleExtensions.Areas.Commands.Models;
 
 namespace Mmu.BackupBuddy.TestConsole.Areas.ConsoleCommands
 {
+    [PublicAPI]
     public class CreateBackups : IConsoleCommand
     {
         private readonly IBackupOrchestrationService _backupOrchestrator;
-        private readonly ILogger _logger;
 
-        public CreateBackups(IBackupOrchestrationService backupOrchestrator, ILogger logger)
+        public CreateBackups(IBackupOrchestrationService backupOrchestrator)
         {
             _backupOrchestrator = backupOrchestrator;
-            _logger = logger;
         }
 
         public string Description { get; } = "Create Backups";
@@ -22,7 +21,7 @@ namespace Mmu.BackupBuddy.TestConsole.Areas.ConsoleCommands
 
         public Task ExecuteAsync()
         {
-            _backupOrchestrator.CreateBackups(_logger);
+            _backupOrchestrator.CreateBackups();
 
             return Task.CompletedTask;
         }

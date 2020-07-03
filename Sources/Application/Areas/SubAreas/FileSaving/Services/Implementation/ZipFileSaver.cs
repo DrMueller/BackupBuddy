@@ -7,7 +7,7 @@ using Mmu.Mlh.LanguageExtensions.Areas.Collections;
 
 namespace Mmu.BackupBuddy.Application.Areas.SubAreas.FileSaving.Services.Implementation
 {
-    public class ZipFileSaver : IZipFileSaver
+    internal class ZipFileSaver : IZipFileSaver
     {
         private readonly IAppSettingsProvider _appSettingsProvider;
         private readonly IDirectoryRepository _directoryRepo;

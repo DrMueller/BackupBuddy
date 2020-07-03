@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using Lamar;
 using Lamar.Microsoft.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
@@ -7,6 +8,7 @@ using Mmu.Mlh.ServiceProvisioning.Areas.Initialization.Services;
 
 namespace Mmu.BackupBuddy.WindowsService
 {
+    [PublicAPI]
     public static class Program
     {
         public static IHostBuilder CreateHostBuilder(string[] args)
@@ -16,14 +18,16 @@ namespace Mmu.BackupBuddy.WindowsService
             return Host.CreateDefaultBuilder(args)
                 .UseLamar()
                 .UseWindowsService()
-                .ConfigureServices((hostContext, services) =>
-                {
-                    services.AddHostedService<Worker>();
-                })
-                .ConfigureContainer<ServiceRegistry>((context, services) =>
-                {
-                    ServiceProvisioningInitializer.PopulateRegistry(containerConfig, services);
-                });
+                .ConfigureServices(
+                    (hostContext, services) =>
+                    {
+                        services.AddHostedService<Worker>();
+                    })
+                .ConfigureContainer<ServiceRegistry>(
+                    (context, services) =>
+                    {
+                        ServiceProvisioningInitializer.PopulateRegistry(containerConfig, services);
+                    });
         }
 
         public static void Main(string[] args)
