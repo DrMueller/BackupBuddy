@@ -27,6 +27,7 @@ namespace Mmu.BackupBuddy.WindowsService
             _stoppingToken = stoppingToken;
             _timer = new System.Timers.Timer(IntervalInMilliSeconds);
             _timer.Elapsed += Timer_Elapsed;
+            _timer.Start();
 
             CreateBackups();
 
@@ -40,7 +41,9 @@ namespace Mmu.BackupBuddy.WindowsService
                 _logger.LogInformation("Starting backup...");
                 _backupOrchestrator.CreateBackups();
                 _logger.LogInformation("Backup finished..");
-                _logger.LogInformation($"Next backup schedules in around {new TimeSpan(0, 0, 0, 0, IntervalInMilliSeconds).Hours} hours..");
+
+                var targetTime = DateTime.Now.AddMilliseconds(IntervalInMilliSeconds);
+                _logger.LogInformation($"Next backup schedules at around {targetTime}..");
             }
             catch (Exception ex)
             {
